@@ -1,0 +1,8 @@
+*.DS_Store
+__pycache__/
+build/
+dist/
+t5x.egg-info/
+t5x/__pycache__/
+t5x/examples/__pycache__/
+t5x/examples/t5/__pycache__/

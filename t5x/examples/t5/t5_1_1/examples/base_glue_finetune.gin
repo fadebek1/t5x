@@ -1,0 +1,18 @@
+include 't5x/configs/runs/finetune.gin'
+include 't5x/examples/t5/t5_1_1/base.gin'
+
+# Register necessary SeqIO Tasks/Mixtures.
+import t5.data.mixtures
+
+TARGET_LENGTH=%gin.REQUIRED
+
+MIXTURE_OR_TASK_NAME = "glue_v002_proportional"
+TASK_FEATURE_LENGTHS = {"inputs": 512, "targets": %TARGET_LENGTH}
+TRAIN_STEPS = 1262144  # 1000000 pre-trained steps + 262144 fine-tuning steps.
+DROPOUT_RATE = 0.1
+INITIAL_CHECKPOINT_PATH = "gs://t5-data/pretrained_models/t5x/t5_1_1_base/checkpoint_1000000"
+
+EVAL_PERIOD=5000
+
+USE_CACHED_TASKS = False
+
