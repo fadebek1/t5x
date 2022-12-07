@@ -1,0 +1,22 @@
+include 't5x/configs/runs/eval.gin'
+include 't5x/examples/t5/t5_1_1/base.gin'
+
+# Register necessary SeqIO Tasks/Mixtures.
+import t5.data.mixtures
+
+MIXTURE_OR_TASK_NAME = "glue_v002_proportional"
+CHECKPOINT_PATH = "gs://t5-data/pretrained_models/t5x/t5_1_1_base/checkpoint_1000000"
+DROPOUT_RATE = 0.0
+
+utils.DatasetConfig:
+  mixture_or_task_name = %MIXTURE_OR_TASK_NAME
+  task_feature_lengths = %TASK_FEATURE_LENGTHS
+  split = 'validation'
+  batch_size = 128
+  shuffle = False
+  seed = 42
+  use_cached = False
+  pack = False
+  use_custom_packing_ops = False
+  module = %MIXTURE_OR_TASK_MODULE
+
