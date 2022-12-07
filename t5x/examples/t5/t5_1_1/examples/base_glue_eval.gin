@@ -5,7 +5,7 @@ include 't5x/examples/t5/t5_1_1/base.gin'
 import t5.data.mixtures
 
 MIXTURE_OR_TASK_NAME = "glue_v002_proportional"
-CHECKPOINT_PATH = "gs://t5-data/pretrained_models/t5x/t5_1_1_base/checkpoint_1000000"
+CHECKPOINT_PATH = "gs://public-permanent-us-central2-0rxn/fadebekun/experiments/t5x-glue-finetune-v4-16-114-target5/checkpoint_1262144"
 DROPOUT_RATE = 0.0
 
 utils.DatasetConfig:
