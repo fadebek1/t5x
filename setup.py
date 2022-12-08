@@ -57,7 +57,7 @@ setuptools.setup(
         'orbax @ git+https://github.com/google/orbax#egg=orbax',
         'seqio @ git+https://github.com/google/seqio#egg=seqio',
         't5 @ git+https://github.com/fadebek1/text-to-text-transfer-transformer.git',
-        'tensorflow-cpu',
+        # 'tensorflow-cpu',
         'tensorstore >= 0.1.20',
     ],
     extras_require={
